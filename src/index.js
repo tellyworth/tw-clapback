@@ -32,7 +32,7 @@ import save from './save';
  *
  * @see https://developer.wordpress.org/block-editor/developers/block-api/#registering-a-block
  */
-registerBlockType( 'create-block/tw-clapback', {
+registerBlockType( 'tw-clapback/clapback', {
 	/**
 	 * This is the display title for your block, which can be translated with `i18n` functions.
 	 * The block inserter will show this name.
@@ -44,7 +44,7 @@ registerBlockType( 'create-block/tw-clapback', {
 	 * It will be shown in the Block Tab in the Settings Sidebar.
 	 */
 	description: __(
-		'Example block written with ESNext standard and JSX support – build step required.',
+		'The👏Clapback👏Block👏puts👏an👏emoji👏between👏your👏words.',
 		'create-block'
 	),
 
