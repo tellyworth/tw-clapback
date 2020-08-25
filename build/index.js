@@ -341,7 +341,7 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])('tw-
    * This is the display title for your block, which can be translated with `i18n` functions.
    * The block inserter will show this name.
    */
-  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Tw Clapback', 'create-block'),
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Clapback', 'create-block'),
 
   /**
    * This is a short description for your block, can be translated with `i18n` functions.
