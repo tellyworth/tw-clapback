@@ -227,7 +227,38 @@ function Edit(_ref) {
       setAttributes = _ref.setAttributes;
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: className
-  }, attributes.content && attributes.emoji && !isSelected ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, attributes.content.split(/\s+/).join(attributes.emoji)) : Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["TextControl"], {
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["PanelBody"], {
+    title: "Clapback Settings",
+    icon: "smiley",
+    initialOpen: true
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["PanelRow"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["SelectControl"], {
+    label: "Emoji",
+    value: attributes.emoji,
+    options: [{
+      label: '👏',
+      value: '👏'
+    }, {
+      label: '👏🏻',
+      value: '👏🏻'
+    }, {
+      label: '👏🏼',
+      value: '👏🏼'
+    }, {
+      label: '👏🏽',
+      value: '👏🏽'
+    }, {
+      label: '👏🏾',
+      value: '👏🏾'
+    }, {
+      label: '👏🏿',
+      value: '👏🏿'
+    }],
+    onChange: function onChange(emoji) {
+      return setAttributes({
+        emoji: emoji
+      });
+    }
+  })))), attributes.content && attributes.emoji && !isSelected ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, attributes.content.split(/\s+/).join(attributes.emoji)) : Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["TextControl"], {
     value: attributes.content.split(attributes.emoji).join(" ") // Any existing content, either from the database or an attribute default
     ,
     onChange: function onChange(content) {

@@ -3,8 +3,8 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
-import { RichText } from '@wordpress/block-editor';
-import { TextControl } from '@wordpress/components';
+import { InspectorControls } from '@wordpress/block-editor';
+import { TextControl, SelectControl, PanelBody, PanelRow } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
 /**
@@ -29,6 +29,29 @@ import './editor.scss';
 export default function Edit( { attributes, className, isSelected, setAttributes } ) {
 		return (
 			<div className={ className }>
+				<InspectorControls>
+				<PanelBody
+		            title="Clapback Settings"
+		            icon="smiley"
+		            initialOpen={ true }
+		            >
+		            <PanelRow>
+						<SelectControl
+						      label="Emoji"
+						      value={ attributes.emoji }
+						      options={ [
+						          { label: '👏', value: '👏' },
+						          { label: '👏🏻', value: '👏🏻' },
+						          { label: '👏🏼', value: '👏🏼' },
+						          { label: '👏🏽', value: '👏🏽' },
+						          { label: '👏🏾', value: '👏🏾' },
+						          { label: '👏🏿', value: '👏🏿' },
+						      ] }
+						   onChange={ ( emoji ) => setAttributes( { emoji: emoji } ) }
+						      />
+		            </PanelRow>
+	            </PanelBody>
+				</InspectorControls>
 				{ attributes.content && attributes.emoji && ! isSelected ? (
 					<div>{ attributes.content.split( /\s+/ ).join( attributes.emoji ) }</div>
 				) : (
