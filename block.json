@@ -1,10 +1,10 @@
 {
-	"name": "create-block/tw-clapback",
-	"title": "Tw Clapback",
+	"name": "tw-clapback/clapback",
+	"title": "Clapback",
 	"category": "widgets",
 	"icon": "smiley",
-	"description": "Example block written with ESNext standard and JSX support – build step required.",
-	"textdomain": "create-block",
+	"description": "The👏Clapback👏Block👏puts👏an👏emoji👏between👏your👏words.",
+	"textdomain": "tw-clapback",
 	"supports": {
 		"html": false
 	},

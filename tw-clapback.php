@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name:     Tw Clapback
- * Description:     Example block written with ESNext standard and JSX support – build step required.
+ * Plugin Name:     Clapback
+ * Description:     The👏Clapback👏Block👏puts👏an👏emoji👏between👏your👏words.
  * Version:         0.1.0
- * Author:          The WordPress Contributors
+ * Author:          tellyworth
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:     create-block
+ * Text Domain:     tw-clapback
  *
- * @package         create-block
+ * @package         tw-clapback
  */
 
 /**
@@ -51,7 +51,7 @@ function create_block_tw_clapback_block_init() {
 		filemtime( "$dir/$style_css" )
 	);
 
-	register_block_type( 'create-block/tw-clapback', array(
+	register_block_type( 'tw-clapback/clapback', array(
 		'editor_script' => 'create-block-tw-clapback-block-editor',
 		'editor_style'  => 'create-block-tw-clapback-block-editor',
 		'style'         => 'create-block-tw-clapback-block',

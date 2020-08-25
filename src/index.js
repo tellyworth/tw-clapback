@@ -68,6 +68,19 @@ registerBlockType( 'create-block/tw-clapback', {
 		html: false,
 	},
 
+	attributes: {
+        content: {
+            type: 'string',
+            source: 'html',
+            selector: 'p',
+            default: '',
+        },
+        emoji: {
+        	type: 'string',
+        	default: '👏',
+        }
+    },
+
 	/**
 	 * @see ./edit.js
 	 */

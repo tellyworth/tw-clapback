@@ -3,6 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
+import { TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
 /**
@@ -14,13 +15,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @return {WPElement} Element to render.
  */
-export default function save() {
-	return (
-		<p>
-			{ __(
-				'Tw Clapback – hello from the saved content!',
-				'create-block'
-			) }
-		</p>
-	);
+
+export default function save( { attributes, className } ) {
+        return <p className={ className }>{ attributes.content.split( /\s+/ ).join( attributes.emoji ) }</p>;
 }

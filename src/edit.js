@@ -3,6 +3,8 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
+import { RichText } from '@wordpress/block-editor';
+import { TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
 /**
@@ -24,10 +26,18 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit( { className } ) {
-	return (
-		<p className={ className }>
-			{ __( 'Tw Clapback – hello from the editor!', 'create-block' ) }
-		</p>
-	);
+export default function Edit( { attributes, className, isSelected, setAttributes } ) {
+		return (
+			<div className={ className }>
+				{ attributes.content && attributes.emoji && ! isSelected ? (
+					<div>{ attributes.content.split( /\s+/ ).join( attributes.emoji ) }</div>
+				) : (
+					<TextControl
+						value={ attributes.content.split( attributes.emoji ).join( " " ) } // Any existing content, either from the database or an attribute default
+						onChange={ ( content ) => setAttributes( { content } ) } // Store updated content as a block attribute
+						placeholder={ __( 'Enter your text here' ) } // Display this text before any content has been added by the user
+					/>
+				) }
+			</div>
+		);
 }
