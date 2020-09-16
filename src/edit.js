@@ -15,6 +15,8 @@ import { __ } from '@wordpress/i18n';
  */
 import './editor.scss';
 
+const EMOJI_CHOICES = ['👏', '👏🏻', '👏🏼', '👏🏽', '👏🏾', '👏🏿', '🔥', '🎶', '🎵', '🎂' ];
+
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
@@ -39,14 +41,7 @@ export default function Edit( { attributes, className, isSelected, setAttributes
 						<SelectControl
 						      label="Emoji"
 						      value={ attributes.emoji }
-						      options={ [
-						          { label: '👏', value: '👏' },
-						          { label: '👏🏻', value: '👏🏻' },
-						          { label: '👏🏼', value: '👏🏼' },
-						          { label: '👏🏽', value: '👏🏽' },
-						          { label: '👏🏾', value: '👏🏾' },
-						          { label: '👏🏿', value: '👏🏿' },
-						      ] }
+						      options={ EMOJI_CHOICES.map( ( emoji ) => ( { label: emoji, value: emoji } ) ) }
 						   onChange={ ( emoji ) => setAttributes( { emoji: emoji } ) }
 						      />
 		            </PanelRow>

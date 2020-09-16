@@ -208,6 +208,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
+var EMOJI_CHOICES = ['👏', '👏🏻', '👏🏼', '👏🏽', '👏🏾', '👏🏿', '🔥', '🎶', '🎵', '🎂'];
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
@@ -234,25 +235,12 @@ function Edit(_ref) {
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["PanelRow"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["SelectControl"], {
     label: "Emoji",
     value: attributes.emoji,
-    options: [{
-      label: '👏',
-      value: '👏'
-    }, {
-      label: '👏🏻',
-      value: '👏🏻'
-    }, {
-      label: '👏🏼',
-      value: '👏🏼'
-    }, {
-      label: '👏🏽',
-      value: '👏🏽'
-    }, {
-      label: '👏🏾',
-      value: '👏🏾'
-    }, {
-      label: '👏🏿',
-      value: '👏🏿'
-    }],
+    options: EMOJI_CHOICES.map(function (emoji) {
+      return {
+        label: emoji,
+        value: emoji
+      };
+    }),
     onChange: function onChange(emoji) {
       return setAttributes({
         emoji: emoji

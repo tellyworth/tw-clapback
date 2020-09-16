@@ -19,6 +19,9 @@ You can choose the colour.
 
 == Changelog ==
 
+= 0.3.0 =
+* Added🎶some🎶new🎶Emoji🎶choices.
+
 = 0.2.0 =
 * Add emoji colour selector.
 
